@@ -1,0 +1,5 @@
+apis:
+  behandling@v1:
+    root: https://dp-behandling.intern.dev.nav.no/openapi/behandling-api.yaml
+    x-openapi-ts:
+      output: ./openapi/behandling-typer.ts
