@@ -19,8 +19,5 @@ spec:
       value: "{{dp-behandling_audience}}"
     - name: SANITY_DATASET
       value: "{{sanity_dataset}}"
-    - name: SANITY_TOKEN
-      valueFrom:
-        secretKeyRef:
-          name: dp-sanity-sync-token
-          key: SANITY_TOKEN
+  envFrom:
+    - secret: dp-sanity-sync-token
