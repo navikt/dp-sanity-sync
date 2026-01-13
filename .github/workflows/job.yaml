@@ -9,7 +9,6 @@ env:
 jobs:
   build:
     name: Bygg
-    needs: [ test ]
     runs-on: ubuntu-latest
     permissions:
       contents: "read"
