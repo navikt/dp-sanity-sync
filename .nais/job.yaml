@@ -1,0 +1,21 @@
+apiVersion: nais.io/v1
+kind: Naisjob
+metadata:
+  labels:
+    team: teamdagpeger
+  name: dp-sanity-sync
+  namespace: teamdagpeger
+spec:
+  schedule: "0 * * * *" # Runs every hour
+  image: {{image}} # Placeholder variable to be replaced by the CI/CD pipeline
+  resources:
+    requests:
+      cpu: 200m
+      memory: 128Mi
+  env:
+    - name: DP_BEHANDLING_URL
+      value: "{{dp-behandling_url}}" 
+    - name: DP_BEHANDLING_AUDIENCE
+      value: "{{dp-behandling_audience}}"
+    - name: SANITY_DATASET
+      value: "{{sanity_dataset}}"

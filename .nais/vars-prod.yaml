@@ -1,0 +1,3 @@
+dp-behandling_url: "http://dp-behandling"
+dp-behandling_audience: "api://prod-gcp.teamdagpenger.dp-behandling/.default"
+sanity_dataset: "production"
