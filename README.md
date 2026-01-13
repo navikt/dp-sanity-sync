@@ -3,7 +3,7 @@
 Slik setter du opp for å teste lokalt:
 
 - `cp .env.example .env`
-- hent token fra https://www.sanity.io/manage -> `dp-sanity-cms` -> api -> Add API tokenn
+- hent token fra https://www.sanity.io/manage -> `dp-sanity-cms` -> api -> Add API token
 - sleng det inn i `SANITY_TOKEN` i .env
 - `deno task sync`
 

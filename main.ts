@@ -21,15 +21,12 @@ const sanityClient = createSanityClient({
   apiVersion: "2021-10-01",
 });
 
-  const behandlingClient = createClient<paths>({
-    baseUrl: Deno.env.get("DP_BEHANDLING_URL"),
-  });
+const behandlingClient = createClient<paths>({
+  baseUrl: Deno.env.get("DP_BEHANDLING_URL"),
+});
 
 
 async function hentOpplysninger() {
-  if (Deno.env.get("IS_LOCALHOST") === "true") {
-    return opplysningstyperMock;
-  }
   const audience = Deno.env.get("DP_BEHANDLING_AUDIENCE");
   if (!audience) {
     throw new Error("DP_BEHANDLING_AUDIENCE is not set");
