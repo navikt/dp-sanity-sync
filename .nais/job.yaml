@@ -2,9 +2,9 @@ apiVersion: nais.io/v1
 kind: Naisjob
 metadata:
   labels:
-    team: teamdagpeger
+    team: teamdagpenger
   name: dp-sanity-sync
-  namespace: teamdagpeger
+  namespace: teamdagpenger
 spec:
   schedule: "0 * * * *" # Runs every hour
   image: {{image}} # Placeholder variable to be replaced by the CI/CD pipeline
