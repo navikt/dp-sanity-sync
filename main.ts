@@ -1,9 +1,9 @@
-import { createClient as createSanityClient } from "@sanity/client";
-import createClient from "openapi-fetch";
-import { paths } from "./openapi/behandling-typer.ts";
 import { requestAzureClientCredentialsToken } from "@navikt/oasis";
-import { opplysningstyperMock } from "./mock.ts";
+import { createClient as createSanityClient } from "@sanity/client";
 import { load } from "@std/dotenv";
+import createClient from "openapi-fetch";
+import { opplysningstyperMock } from "./mock.ts";
+import { paths } from "./openapi/behandling-typer.ts";
 
 await load({
   export: true,
@@ -21,10 +21,10 @@ const sanityClient = createSanityClient({
   apiVersion: "2021-10-01",
 });
 
-// const behandlingClient = createClient<paths>({ baseUrl: getEnv("DP_BEHANDLING_URL") });
-const behandlingClient = createClient<paths>({
-  baseUrl: "https://dp-behandling.intern.dev.nav.no",
-});
+  const behandlingClient = createClient<paths>({
+    baseUrl: Deno.env.get("DP_BEHANDLING_URL"),
+  });
+
 
 async function hentOpplysninger() {
   if (Deno.env.get("IS_LOCALHOST") === "true") {

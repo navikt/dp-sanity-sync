@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run -P --watch main.ts",
+    "sync": "deno run -P main.ts",
     "generate-openapi-types": "deno x openapi-typescript"
   },
   "imports": {
