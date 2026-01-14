@@ -1349,6 +1349,7 @@ export interface components {
             dato: string;
             sats: number;
             utbetaling: number;
+            opprinnelse?: components["schemas"]["Opprinnelse"];
         };
         BehandletAv: {
             /** @enum {string} */

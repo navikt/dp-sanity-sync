@@ -10,7 +10,6 @@ await load({
 
 const dataset = Deno.env.get("SANITY_DATASET") || "development";
 const token = Deno.env.get("SANITY_TOKEN") || "";
-const dryRun = Deno.env.get("DRY_RUN") === "true";
 
 const sanityClient = createSanityClient({
   projectId: "rt6o382n",
@@ -23,7 +22,6 @@ const sanityClient = createSanityClient({
 const behandlingClient = createClient<paths>({
   baseUrl: Deno.env.get("DP_BEHANDLING_URL"),
 });
-
 
 async function hentOpplysninger() {
   const audience = Deno.env.get("DP_BEHANDLING_AUDIENCE");
@@ -68,7 +66,9 @@ async function syncOpplysninger() {
     '*[_type == "regelmotorOpplysning"]{opplysningTypeId, _id}'
   );
 
-  console.log(`Henta ${dokumenter.length} eksisterende regelmotorOpplysninger fra Sanity`);
+  console.log(
+    `Henta ${dokumenter.length} eksisterende regelmotorOpplysninger fra Sanity`
+  );
 
   const transaction = sanityClient.transaction();
 
@@ -95,15 +95,12 @@ async function syncOpplysninger() {
     }
   }
 
+  const dryRun = Deno.env.get("DRY_RUN") === "true";
   if (!dryRun) {
     await transaction.commit();
-    console.info(
-      `Ferdig! Synka ${opplysninger.length} opplysninger`
-    );
+    console.info(`Ferdig! Synka ${opplysninger.length} opplysninger`);
   } else {
-    console.info(
-      `Dry run: Ville synka ${opplysninger.length} opplysninger`
-    );
+    console.info(`Dry run: Ville synka ${opplysninger.length} opplysninger`);
   }
 }
 
