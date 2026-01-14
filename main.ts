@@ -2,7 +2,6 @@ import { requestAzureClientCredentialsToken } from "@navikt/oasis";
 import { createClient as createSanityClient } from "@sanity/client";
 import { load } from "@std/dotenv";
 import createClient from "openapi-fetch";
-import { opplysningstyperMock } from "./mock.ts";
 import { paths } from "./openapi/behandling-typer.ts";
 
 await load({
@@ -108,4 +107,4 @@ async function syncOpplysninger() {
   }
 }
 
-syncOpplysninger().catch(console.error);
+syncOpplysninger();
