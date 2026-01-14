@@ -24,3 +24,9 @@ spec:
   azure:
     application:
       enabled: true
+  accessPolicy:
+    rules:
+      - application: dp-behandling
+    external:
+      - host: rt6o382n.api.sanity.io
+      - host: rt6o382n.apicdn.sanity.io
