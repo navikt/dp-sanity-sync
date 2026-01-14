@@ -14,7 +14,7 @@
   "permissions": {
     "default": {
       "env": true,
-      "net": ["dp-behandling.intern.dev.nav.no:443", "rt6o382n.apicdn.sanity.io:443", "rt6o382n.api.sanity.io:443", "127.0.0.1:7164"],
+      "net": ["dp-behandling.intern.dev.nav.no:443", "rt6o382n.apicdn.sanity.io:443", "rt6o382n.api.sanity.io:443", "127.0.0.1:7164", "dp-behandling:80"],
       "read": ["./.env"]
     }
   }
