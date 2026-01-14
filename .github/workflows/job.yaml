@@ -61,3 +61,22 @@ jobs:
           RESOURCE: .nais/job.yaml
           VARS: .nais/vars-dev.yaml
           PRINT_PAYLOAD: true
+  deploy-dev:
+    permissions:
+      id-token: "write"
+    name: Deploy til prod-gcp
+    if: github.actor != 'dependabot[bot]'
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    environment:
+      name: Development
+    steps:
+      - uses: actions/checkout@v6
+      - uses: nais/deploy/actions/deploy@v2
+        env:
+          VAR: image=${{ needs.build.outputs.image }},githubSha=${{ github.sha }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          RESOURCE: .nais/job.yaml
+          VARS: .nais/vars-prod.yaml
+          PRINT_PAYLOAD: true
