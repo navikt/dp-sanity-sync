@@ -61,7 +61,7 @@ jobs:
           RESOURCE: .nais/job.yaml
           VARS: .nais/vars-dev.yaml
           PRINT_PAYLOAD: true
-  deploy-dev:
+  deploy-prod:
     permissions:
       id-token: "write"
     name: Deploy til prod-gcp
