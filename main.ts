@@ -31,6 +31,7 @@ async function hentOpplysninger() {
   if (!audience) {
     throw new Error("DP_BEHANDLING_AUDIENCE is not set");
   }
+  console.log("Henter clientCredentials for audience:", audience);
   const clientCredentials = await requestAzureClientCredentialsToken(audience);
   if (!clientCredentials.ok) {
     throw new Error(
@@ -40,6 +41,7 @@ async function hentOpplysninger() {
 
   const onBehalfOfToken = clientCredentials.token;
 
+  console.log("Henter opplysningstyper fra dp-behandling");
   const { data, response } = await behandlingClient.GET("/opplysningstyper", {
     headers: {
       "Content-Type": "application/json",
@@ -60,11 +62,14 @@ async function hentOpplysninger() {
 
 async function syncOpplysninger() {
   const opplysninger = await hentOpplysninger();
+
+  console.log(`Henta ${opplysninger.length} opplysninger fra dp-behandling`);
+
   const dokumenter = await sanityClient.fetch(
     '*[_type == "regelmotorOpplysning"]{opplysningTypeId, _id}'
   );
 
-  console.log(`Fetched ${dokumenter.length} existing documents from Sanity`);
+  console.log(`Henta ${dokumenter.length} eksisterende regelmotorOpplysninger fra Sanity`);
 
   const transaction = sanityClient.transaction();
 
@@ -94,11 +99,11 @@ async function syncOpplysninger() {
   if (!dryRun) {
     await transaction.commit();
     console.info(
-      `Done! Synced ${opplysninger.length} opplysninger in one transaction`
+      `Ferdig! Synka ${opplysninger.length} opplysninger`
     );
   } else {
     console.info(
-      `Dry run: Would have synced ${opplysninger.length} opplysninger`
+      `Dry run: Ville synka ${opplysninger.length} opplysninger`
     );
   }
 }
