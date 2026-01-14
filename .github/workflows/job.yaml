@@ -69,7 +69,7 @@ jobs:
     needs: [ build ]
     runs-on: ubuntu-latest
     environment:
-      name: Development
+      name: Production
     steps:
       - uses: actions/checkout@v6
       - uses: nais/deploy/actions/deploy@v2
