@@ -5,7 +5,7 @@
   },
   "imports": {
     "@navikt/oasis": "npm:@navikt/oasis@^4.1.1",
-    "@sanity/client": "npm:@sanity/client@^7.14.0",
+    "@sanity/client": "npm:@sanity/client@^7.14.1",
     "@std/assert": "jsr:@std/assert@1",
     "@std/dotenv": "jsr:@std/dotenv@^0.225.6",
     "openapi-fetch": "npm:openapi-fetch@^0.15.0"

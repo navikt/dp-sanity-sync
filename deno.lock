@@ -6,7 +6,7 @@
     "jsr:@std/dotenv@~0.225.6": "0.225.6",
     "jsr:@std/internal@^1.0.12": "1.0.12",
     "npm:@navikt/oasis@^4.1.1": "4.1.1",
-    "npm:@sanity/client@^7.14.0": "7.14.0",
+    "npm:@sanity/client@^7.14.1": "7.14.1",
     "npm:openapi-fetch@0.15": "0.15.0"
   },
   "jsr": {
@@ -41,8 +41,8 @@
     "@opentelemetry/api@1.9.0": {
       "integrity": "sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg=="
     },
-    "@sanity/client@7.14.0": {
-      "integrity": "sha512-eXue3rc4MqJh89mvuTC0h0pdoY8lwXjlV8odFB3EF7aSFKF7F5BL0NU2mlTrCZYbPAlV3JTvMPPLGJCORqOKDw==",
+    "@sanity/client@7.14.1": {
+      "integrity": "sha512-lCDx0vuNUgg9FL2E5Hiv1q7u6iHd1Z+jjMZAaYtfzzFPoBKOiyZlaFwqyLVHRyTbwnXQdIGDPmx2AvfBTbGQsQ==",
       "dependencies": [
         "@sanity/eventsource",
         "get-it",
@@ -71,8 +71,8 @@
         "@types/node"
       ]
     },
-    "@types/node@25.0.6": {
-      "integrity": "sha512-NNu0sjyNxpoiW3YuVFfNz7mxSQ+S4X2G28uqg2s+CzoqoQjLPsWSbsFFyztIAqt2vb8kfEAsJNepMGPTxFDx3Q==",
+    "@types/node@25.2.0": {
+      "integrity": "sha512-DZ8VwRFUNzuqJ5khrvwMXHmvPe+zGayJhr2CDNiKB1WBE1ST8Djl00D0IC4vvNmHMdj6DlbYRIaFE7WHjlDl5w==",
       "dependencies": [
         "undici-types"
       ]
@@ -194,7 +194,7 @@
       "jsr:@std/assert@1",
       "jsr:@std/dotenv@~0.225.6",
       "npm:@navikt/oasis@^4.1.1",
-      "npm:@sanity/client@^7.14.0",
+      "npm:@sanity/client@^7.14.1",
       "npm:openapi-fetch@0.15"
     ]
   }
