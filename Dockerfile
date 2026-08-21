@@ -1,4 +1,4 @@
-FROM denoland/deno:alpine-2.6.7@sha256:454b4d685f9e8f35e41f838aa5ca297769f4ee18ee0f4814329b51af2c4c9e7c
+FROM denoland/deno:alpine-2.9.5@sha256:b429777c3dcff34a6488f365a1537db1640b2d48379b60f5e6206be034472463
 
 WORKDIR /app
 # Prefer not to run as root.
