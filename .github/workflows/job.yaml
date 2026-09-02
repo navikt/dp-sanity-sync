@@ -1,7 +1,9 @@
 name: Bygg og deploy
 on:
   push:
-
+    branches-ignore:
+      - 'dependabot/**'
+      - 'renovate/**'
 env:
   IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
   LATEST_IMAGE: ghcr.io/${{ github.repository }}:latest
