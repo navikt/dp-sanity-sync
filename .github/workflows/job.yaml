@@ -55,7 +55,7 @@ jobs:
       name: Development
     steps:
       - uses: actions/checkout@v7
-      - uses: nais/deploy/actions/deploy@v2
+      - uses: nais/deploy/actions/deploy@v3
         env:
           VAR: image=${{ needs.build.outputs.image }},githubSha=${{ github.sha }}
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
@@ -74,7 +74,7 @@ jobs:
       name: Production
     steps:
       - uses: actions/checkout@v7
-      - uses: nais/deploy/actions/deploy@v2
+      - uses: nais/deploy/actions/deploy@v3
         env:
           VAR: image=${{ needs.build.outputs.image }},githubSha=${{ github.sha }}
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
