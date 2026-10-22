@@ -7,7 +7,7 @@ RUN deno install
 RUN deno cache main.ts
 
 # Distroless has no shell/package manager, so deno install/cache must happen in the builder stage above.
-FROM denoland/deno:distroless@sha256:16583ef81ce73d6fdf806174fbda68bf4c57e914659ffe6b1c2b600ac2327962
+FROM denoland/deno:distroless@sha256:88882a0c54683c0953cdc26684e02111aa93c1f66e8c489900281ae4a3f5c8ad
 
 WORKDIR /app
 COPY --from=builder /app /app
