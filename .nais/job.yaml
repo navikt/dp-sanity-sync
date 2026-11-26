@@ -7,6 +7,7 @@ metadata:
   namespace: teamdagpenger
 spec:
   schedule: "0 7 * * *"
+  concurrencyPolicy: Forbid
   image: {{image}} # Placeholder variable to be replaced by the CI/CD pipeline
   resources:
     requests:
